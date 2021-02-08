@@ -1,0 +1,7 @@
+{%- assign sectionType = section.sectionType -%}
+{%- case sectionType -%}
+  {%- when 'feature' -%}
+    {%- include 'components/sections/section_feature', feature: section -%}
+  {%- else -%}
+    {%- include 'components/sections/section_plain', section: section -%}
+{%- endcase -%}

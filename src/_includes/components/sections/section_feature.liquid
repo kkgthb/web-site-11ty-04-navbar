@@ -1,0 +1,21 @@
+---
+# Short-circuit if data passed to this partial as "feature" isn't actually feature-like
+---
+{%- unless section.image == blank -%}
+<section class="feature">
+  <div class="feature-text">
+    <h1>{{ feature.title }}</h1>
+    <h2>{{ feature.subtitle }}</h2>
+    <p>{{ feature.description }}</p>
+    {%- if <a href="{{ feature.buttonHref }}">{{ feature.buttonText }}</a> -%}
+    <p>Hello World I am a {{ feature.bigWords }} feature!</p>
+  </div>
+  <div class="feature-image">
+    <img 
+      aria-hidden="true" 
+      src="{{ feature.imageLqipData }}" 
+      alt="{{ feature.title }} - Featured image" 
+    />
+  </div>
+</section>
+{%- endunless -%}

@@ -1,0 +1,26 @@
+---
+layout: "layouts/base"
+pagination:
+  alias: documentData
+  data: flexipages
+  size: 1
+  addAllPagesToCollections: true
+# https://firxworx.com/blog/it-devops/sysadmin/using-ansibles-regex_replace-filter-to-strip-leading-and-trailing-slashes-from-strings/
+permalink: /{{ documentData.slug | removeSlashes }}/index.html
+---
+
+<p>Beginning of a flexi-page (sections below)</p>
+{% if documentData.sections %}
+<div class="flexi-sections">
+  {% assign sections = documentData.sections %}
+  {% for section in sections %}
+    {% assign sectionIsValid = section | validateSection %}
+    {% if sectionIsValid %}
+      <section class="{{ section | getSectionClassText }}">
+        {% include 'components/sections/functions/section_component_picker' section: section %}
+      </section>
+    {% endif %}{% comment %}End "is section valid?" IF-clause{% endcomment %}
+  {% endfor %}{% comment %}End loop through flexi-section data{% endcomment %}
+</div>
+<p>End of a flexi-page (sections above)</p>
+{% endif %}

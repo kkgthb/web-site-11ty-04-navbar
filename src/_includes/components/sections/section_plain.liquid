@@ -1,0 +1,6 @@
+{%- comment -%}Short-circuit if data passed to this partial as "plain" isn't actually plain-like{%- endcomment -%}
+{%- unless section.text == blank -%}
+<div class="{{ section | getSectionBodyClassText }}">
+{{ section.text }}
+</div>
+{%- endunless -%}
