@@ -1,0 +1,77 @@
+/**
+ * "Grid support" SCSS classes.
+ * https://github.com/1000ch/grd-sass/blob/master/grd.scss
+ * Was under "components" SCSS folder, but not sure I like it there.
+ */
+$total-columns: 12 !default;
+
+@mixin grdGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin grdCell {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.grdGrid {
+  @include grdGrid;
+}
+.grdGrid.\-top {
+  align-items: flex-start;
+}
+.grdGrid.\-middle {
+  align-items: center;
+}
+.grdGrid.\-bottom {
+  align-items: flex-end;
+}
+.grdGrid.\-stretch {
+  align-items: stretch;
+}
+.grdGrid.\-baseline {
+  align-items: baseline;
+}
+.grdGrid.\-left {
+  justify-content: flex-start;
+}
+.grdGrid.\-center {
+  justify-content: center;
+}
+.grdGrid.\-right {
+  justify-content: flex-end;
+}
+.grdGrid.\-between {
+  justify-content: space-between;
+}
+.grdGrid.\-around {
+  justify-content: space-around;
+}
+
+.grdCell {
+  @include grdCell;
+}
+
+.grdCell.\-fill {
+  width: 0;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+@for $index from 1 through $total-columns {
+  .grdCell.\-#{$index}of#{$total-columns} {
+    @if ($index != $total-columns) {
+      width: calc(100% * #{$index} / #{$total-columns});
+    } @else {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width:($width-md+60)) {
+  // Jump to 1-wide, 100%-fill cards-in-flex at "md" breakpoint for "fill" cells
+  .grdCell.\-fill {
+    width: 100%;
+  }
+}
