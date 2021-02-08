@@ -1,0 +1,18 @@
+/**
+ * Helper SCSS Classes
+ */
+.contained {
+  margin-left: auto; // Center "contained" (non-full-bleed) content within its space
+  margin-right: auto; // Center "contained" (non-full-bleed) content within its space
+  max-width: 100%; // Make sure "contained" (non-full-bleed) content can't overflow its space left-right
+  padding-left: $contained-padding-lr; // Bring "contained" (non-full-bleed) content in from the edges a bit, for looks
+  padding-right: $contained-padding-lr; // Bring "contained" (non-full-bleed) content in from the edges a bit, for looks
+}
+
+.contained--md {
+  max-width: $width-md; // If a flexi-content section has this class too, give it a pixel-based max-width
+}
+
+.contained--lg {
+  max-width: $width-lg; // If a flexi-content section has this class too, give it a pixel-based max-width
+}
