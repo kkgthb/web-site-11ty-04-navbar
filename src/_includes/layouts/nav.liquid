@@ -1,5 +1,46 @@
 <header id="masthead">
   <div class="contained contained--lg">
-    Masthead goes here
+    <nav role="navigation" aria-label="Main Navigation" id="topnav" class="topnav grdGrid -middle -between">
+
+      <div class="topnav__header grdCell">
+        <div class="grdGrid -middle -between">
+          <a href="/" id="brandingLogo" class="topnav__header__actionable grdCell">
+            Branding Logo
+          </a>
+          <button type="button" class="topnav__hamburger">
+            <span class="topnav__header__actionable grdCell">
+              Menu &#9776;
+            </span>
+          </button>
+        </div>{%- comment -%}End div.topnav__header{%- endcomment -%}
+      </div>{%- comment -%}End div.grdGrid{%- endcomment -%}
+
+      <div class="topnav__body grdCell -fill">
+        {%- for link in site.mainNavLinks -%}
+          {%- if link.sublinks == blank or link.sublinks.size == 0 -%}
+            <a href="{{ link.url }}" class="topnav__body__outeritem k_topnav__body__actionable">
+              {{ link.text }}
+            </a>
+          {%- else -%}
+            <div class="topnav__body__outeritem topnav__dropdown">
+              <button class="topnav__dropdown__button">
+                <span class="topnav__body__actionable">
+                  {{ link.text }}
+                </span>
+              </button>
+              <div class="topnav__dropdown__items">
+                {%- for sublink in link.sublinks -%}
+                  <a href="{{ sublink.url }}" class="topnav__body__actionable">
+                    {{ sublink.text }}
+                  </a>
+                {%- endfor -%}
+              </div>
+            </div>{%- comment -%}End div.topnav__dropdown{%- endcomment -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>{%- comment -%}End div.topnav__body{%- endcomment -%}
+
+	  </nav>
+	  <div style="clear: both;"></div><!-- TO DO:  FIX ME-->
   </div>{%- comment -%}End div.contained{%- endcomment -%}
 </header>
