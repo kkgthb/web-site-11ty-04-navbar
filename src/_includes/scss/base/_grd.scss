@@ -13,6 +13,7 @@ $total-columns: 12 !default;
 @mixin grdCell {
   box-sizing: border-box;
   flex-shrink: 0;
+  max-width: 100%;
 }
 
 .grdGrid {

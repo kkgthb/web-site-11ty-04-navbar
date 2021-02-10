@@ -2,10 +2,14 @@
  * Top-nav SCSS Classes
  */
 
-.topnav__dropdown__button {
+ .topnav__dropdown__button {
   max-width: 100%;
 }
 
 .topnav__body__actionable {
   overflow-wrap: break-word;
+}
+
+a.topnav__body__actionable {
+  display: block;
 }
