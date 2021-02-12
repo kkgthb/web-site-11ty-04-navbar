@@ -5,6 +5,19 @@ var $ = document.querySelector.bind(document);
 // Helper:  return array of selected elements - $$('img.dog') // Credit: https://twitter.com/wesbos/status/608341616173182977
 var $$ = document.querySelectorAll.bind(document);
 
+// Helper:  toggleCollapsedNav()
+function toggleCollapsedNav(event) {
+  if (event.type === "click") {
+    // Turns out I don't need to add 32/13 (space/enter) "keypress" -- it just fights w/ browser treating it as "click"
+    $(".topnav__body").classList.toggle("collapsed-if-appropriate");
+  } else if (event.type === "keydown") {
+    let code = event.charCode || event.keyCode;
+    if (code === 27) {
+      // Escape key
+      $(".topnav__body").classList.remove("collapsed-if-appropriate");
+    }
+  }
+}
 
 
 
@@ -20,6 +33,5 @@ var $$ = document.querySelectorAll.bind(document);
 $(".topnav__body").classList.toggle("collapsed-if-appropriate");
 
 // Make the hamburger toggle a "collapsed-if-appropriate" class on the nav body
-$(".topnav__hamburger").addEventListener("click", function (event) {
-  $(".topnav__body").classList.toggle("collapsed-if-appropriate");
-});
+$(".topnav__hamburger").addEventListener("click", toggleCollapsedNav);
+$(".topnav__hamburger").addEventListener("keydown", toggleCollapsedNav);
