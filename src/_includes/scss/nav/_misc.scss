@@ -13,22 +13,3 @@
 a.topnav__body__actionable {
   display: block;
 }
-
-@mixin wide-nav-mixin() {
-  .topnav__header,
-  .topnav__body,
-  .topnav__body__outeritem {
-    width: 100%;
-  }
-  .topnav__body__outeritem {
-    text-align: center;
-  }
-}
-
-html.no-js {
-  @include wide-nav-mixin();
-}
-
-@media (max-width: ($width-md+60)) {
-  @include wide-nav-mixin();
-}

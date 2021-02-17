@@ -1,0 +1,81 @@
+@mixin stacked-nav-mixin() {
+  .topnav__header,
+  .topnav__body,
+  .topnav__body__outeritem {
+    width: 100%;
+  }
+  .topnav__body__outeritem {
+    text-align: center;
+  }
+}
+
+@mixin hidden-dropdown-items() {
+  .topnav__dropdown__items {
+    display: none;
+  }
+}
+
+@mixin exposed-dropdown-items() {
+  .topnav__dropdown__items {
+    display: block;
+  }
+}
+
+@mixin floaty-dropdown-items() {
+  .topnav__dropdown__items {
+    position: absolute; // Make dropdown items float in the right spot
+    z-index: 1; // Make sure dropdown items cover anything beneath them
+  }
+}
+
+// -------------------------
+
+.topnav__hamburger {
+  // By default, hide the hamburger
+  display: none;
+}
+
+html.no-js {
+  // With JS disabled, use "stacked" layout & expose all 2nd-level items.  Ugly but functional.
+  @include stacked-nav-mixin();
+  @include exposed-dropdown-items();
+}
+
+html.js {
+  // With JS turned on ...
+  .topnav {
+    // By default, hide all "dropdown items" when JavaScript is available
+    @include hidden-dropdown-items();
+  }
+
+  .topnav__dropdown.exposed {
+    // When a "dropdown" is toggled to "exposed" by JavaScript, expose its "items"
+    @include exposed-dropdown-items();
+  }
+
+  .topnav__dropdown__button {
+    &::after {
+      content: "\00a0▾"; // Make dropdown buttons visually obvious with a down arrow
+    }
+  }
+
+  @media (max-width: ($width-sm+60)) {
+    // 503 sm, 783 md (460 / 740)
+    @include stacked-nav-mixin();
+
+    .topnav__hamburger {
+      // On small screens w/ JS on, expose the hamburger
+      display: block;
+    }
+    .topnav__body.collapsed-if-appropriate {
+      // Hide "collapsed" things controlled by the hamburger
+      display: none;
+    }
+  }
+
+  @media (min-width: ($width-sm+61)) {
+    @include floaty-dropdown-items();
+  }
+
+  // End of "With JS turned on ..." html.js selector
+}
