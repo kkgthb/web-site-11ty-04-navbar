@@ -3,11 +3,25 @@
   {% include 'layouts/html_head' %}
   <body>
     <div id="site-wrap">
-      {%- include 'layouts/nav' -%}
+      {%- if page.url == '/lists/' -%}
+        {%- include 'layouts/nav_with_lists' -%}
+      {%- else -%}
+        {%- include 'layouts/nav_bare' -%}
+      {%- endif -%}
       
       <main id="content">
         {{ content }}
       </main>
+
+      <footer>
+        <h2>Site map</h2>
+        <p>There are {{ collections.all.size }} collection items across the board.</p>
+        <ul>
+          {% for item in collections.all %}
+            <li><a href="{{ item.url | url }}">Page:  {{ item.url | url }}</a></i></li>
+          {% endfor %}
+        </ul>
+      </footer>
       <!-- Current page: {{ page.url | url }} -->
     </div>{%- comment -%}End div#site-wrap{%- endcomment -%}
     {% include 'layouts/scripts_end' %}

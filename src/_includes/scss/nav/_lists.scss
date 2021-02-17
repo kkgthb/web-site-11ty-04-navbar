@@ -1,0 +1,9 @@
+.topnav {
+  // Strip away all native browser UL/LI styling from UL's & LI's that occur in the topnav.
+  ul,
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}

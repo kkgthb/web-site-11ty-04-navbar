@@ -9,6 +9,16 @@ let flexiPages = [
       },
     ],
   },
+  {
+    slug: "lists",
+    title: "Nav with lists",
+    sections: [
+      {
+        sectionType: "more_gibberish",
+        text: "Do you like lists in your nav?",
+      },
+    ],
+  },
 ];
 
 module.exports = async function () {
