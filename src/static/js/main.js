@@ -43,15 +43,25 @@ function toggleNavDropdown(event) {
 }
 
 // Helper:  clearNavDropdownWhenFocusOutside()
+var skipFocusOutClear = false;
 function clearNavDropdownWhenFocusOutside(event) {
-  for (exposed_dropdown of $$(".topnav__dropdown.exposed")) {
-    if (
-      !exposed_dropdown.contains(event.target) ||
-      (!!event.relatedTarget && !exposed_dropdown.contains(event.relatedTarget))
-    ) {
-      exposed_dropdown.classList.remove("exposed");
+  if (event.type === "mousedown") {
+    skipFocusOutClear = true;
+  } else {
+    for (exposed_dropdown of $$(".topnav__dropdown.exposed")) {
+      if (event.type === "focusout" && skipFocusOutClear) {
+        skipFocusOutClear = false;
+        continue;
+      }
+      if (
+        !exposed_dropdown.contains(event.target) ||
+        (!!event.relatedTarget &&
+          !exposed_dropdown.contains(event.relatedTarget))
+      ) {
+        exposed_dropdown.classList.remove("exposed");
+      }
+      skipFocusOutClear = false;
     }
-    console.log("End loop pass");
   }
 }
 
@@ -74,6 +84,7 @@ $(".topnav__hamburger").addEventListener("click", toggleCollapsedNav);
 $(".topnav__hamburger").addEventListener("keydown", toggleCollapsedNav);
 
 // If you click/focus outside of a given "exposed dropdown," un-expose that dropdown. // Credit: https://laracasts.com/discuss/channels/vue/close-dropdown-when-click-another-element, https://jsfiddle.net/kym2rvyL/1/
+window.addEventListener("mousedown", clearNavDropdownWhenFocusOutside);
 window.addEventListener("click", clearNavDropdownWhenFocusOutside);
 window.addEventListener("focusout", clearNavDropdownWhenFocusOutside);
 
