@@ -31,17 +31,15 @@
                     {{ link.text }}
                   </span>
                 </button>
-                <div class="topnav__dropdown__items">
-                  <ul>
-                    {%- for sublink in link.sublinks -%}
-                      <li class="topnav__body__actionable">
-                        <a href="{{ sublink.url }}">
-                          {{ sublink.text }}
-                        </a>
-                      </li>
-                    {%- endfor -%}
-                  </ul>
-                </div>
+                <ul class="topnav__dropdown__items">
+                  {%- for sublink in link.sublinks -%}
+                    <li class="topnav__body__actionable">
+                      <a href="{{ sublink.url }}">
+                        {{ sublink.text }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
               </li>{%- comment -%}End li.topnav__dropdown{%- endcomment -%}
             {%- endif -%}
           {%- endfor -%}
