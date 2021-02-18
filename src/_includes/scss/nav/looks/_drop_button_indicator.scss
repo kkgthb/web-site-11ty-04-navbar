@@ -1,0 +1,5 @@
+html.js .topnav .tn_drop .tn_bl1_viz .tn_bl1_txt {
+  &::after {
+    content: "\00a0▾"; // Make dropdown buttons visually obvious with a down arrow
+  }
+}

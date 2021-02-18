@@ -19,6 +19,26 @@ let flexiPages = [
       },
     ],
   },
+  {
+    slug: "wet",
+    title: "Water.css exists",
+    sections: [
+      {
+        sectionType: "soaking",
+        text: "This has water.css applied",
+      },
+    ],
+  },
+  {
+    slug: "wetlists",
+    title: "Watery Lists",
+    sections: [
+      {
+        sectionType: "soaking",
+        text: "This has water.css applied and uses lists",
+      },
+    ],
+  },
 ];
 
 module.exports = async function () {

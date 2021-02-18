@@ -1,0 +1,7 @@
+      {%- if pageurl == '/lists/' -%}
+        {% include 'components/nav/nav_links_lists', links: links, pageurl: pageurl %}
+      {%- elsif pageurl == '/wetlists/' -%}
+        {% include 'components/nav/nav_links_lists', links: links, pageurl: pageurl %}
+      {%- else -%}
+        {% include 'components/nav/nav_links_bare', links: links, pageurl: pageurl %}
+      {%- endif -%}

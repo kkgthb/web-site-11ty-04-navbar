@@ -1,0 +1,9 @@
+        <div class="grdGrid -top -left">
+          {%- for link in links -%}
+            {%- if link.sublinks == blank or link.sublinks.size == 0 -%}
+              {% include 'components/nav/nav_l1link_bare', link: link, pageurl: pageurl %}
+            {%- else -%}
+              {% include 'components/nav/nav_dropdown_bare', link: link, pageurl: pageurl %}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>{%- comment -%}End div.grdGrid.-top.-left{%- endcomment -%}

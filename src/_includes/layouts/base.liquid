@@ -3,11 +3,7 @@
   {% include 'layouts/html_head' %}
   <body>
     <div id="site-wrap">
-      {%- if page.url == '/lists/' -%}
-        {%- include 'layouts/nav_with_lists' -%}
-      {%- else -%}
-        {%- include 'layouts/nav_bare' -%}
-      {%- endif -%}
+      {%- include 'layouts/nav' -%}
       
       <main id="content">
         {{ content }}

@@ -1,0 +1,18 @@
+@mixin hidden-dropdown-items() {
+  .tn_flyo {
+    display: none;
+  }
+}
+
+@mixin exposed-dropdown-items() {
+  .tn_flyo {
+    display: block;
+  }
+}
+
+@mixin floaty-dropdown-items() {
+  .tn_flyo {
+    position: absolute; // Make dropdown items float in the right spot
+    z-index: 1; // Make sure dropdown items cover anything beneath them
+  }
+}

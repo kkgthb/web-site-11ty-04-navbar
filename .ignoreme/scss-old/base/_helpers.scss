@@ -1,15 +1,6 @@
 /**
  * Helper SCSS Classes
  */
-
-body {
-  background-color: $color-bg-gentle;
-}
-
-.clear {
-  @include clearfix();
-}
-
 .contained {
   margin-left: auto; // Center "contained" (non-full-bleed) content within its space
   margin-right: auto; // Center "contained" (non-full-bleed) content within its space

@@ -10,8 +10,12 @@ module.exports = {
       sublinks: [
         { url: "/dal1/", text: "Dropdown A link 1" },
         { url: "/dal2/", text: "Dropdown A link 2" },
+        { url: "/", text: "Home" },
         { url: "/dal3/", text: "Dropdown A link 3" },
+        { url: "/lists/", text: "Lists nav" },
         { url: "/dal4/", text: "Dropdown A link 4" },
+        { url: "/wet/", text: "Water CSS" },
+        { url: "/wetlists/", text: "Water Lists" },
         { url: "/dal5/", text: "Dropdown A link 5" },
         { url: "/dal6/", text: "Dropdown A link 6" },
       ],
@@ -28,6 +32,9 @@ module.exports = {
       ],
     },
     { url: "/page4/", text: "Page 4" },
+    { url: "/lists/", text: "Lists nav" },
+    { url: "/wet/", text: "Water CSS" },
+    { url: "/wetlists/", text: "Water Lists" },
     { url: "/page5/", text: "Page 5 pneumonoultramicroscopicsilicovolcanoconiosispneumonoultramicroscopicsilicovolcanoconiosispneumonoultramicroscopicsilicovolcanoconiosis" },
     {
       text: "Dropdown C LlanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochLlanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochLlanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochLlanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochLlanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch",

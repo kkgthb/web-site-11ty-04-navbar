@@ -1,0 +1,6 @@
+              {%- capture active_link -%}{%- if pageurl == link.url -%}active{%- endif -%}{%- endcapture -%}
+              <a href="{{ link.url }}" class="tn_bl1_viz grdCell {{ active_link }}">
+                <span class="tn_bl1_txt">
+                  {{ link.text }}
+                </span>
+              </a>

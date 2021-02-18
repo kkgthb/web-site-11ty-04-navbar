@@ -1,0 +1,7 @@
+/*! For a common full reset, see normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+body {
+  margin: 0;
+  padding: 0; // Pretty sure this is necessary only because Water.css is fighting me -- it wants to set body padding.
+  max-width: 100%; // This is necessary only because Water.css is fighting me -- it wants to set body to 800px.
+  text-rendering: optimizeLegibility;
+}

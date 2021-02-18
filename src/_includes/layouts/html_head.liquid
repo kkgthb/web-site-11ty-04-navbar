@@ -2,6 +2,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Begin sync CSS -->
+  {%- if page.url == '/wet/' -%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"/>
+  {%- elsif page.url == '/wetlists/' -%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"/>
+  {%- endif -%}
   <link rel="stylesheet" href="/css/style.css"/>
   <!-- End sync CSS -->
   <!-- Begin pre-connect to certain 3rd-party domains like Cloudinary and Google Fonts -->

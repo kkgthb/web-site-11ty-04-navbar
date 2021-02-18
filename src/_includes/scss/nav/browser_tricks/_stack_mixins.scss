@@ -1,0 +1,14 @@
+@mixin stacked-nav-mixin() {
+  .topnav__header,
+  .topnav__body,
+  .tn_drop,
+  .tn_bl1_viz,
+  .tn_bl2_viz {
+    width: 100%;
+  }
+
+  .tn_bl1_viz,
+  .tn_bl2_viz {
+    text-align: center;
+  }
+}

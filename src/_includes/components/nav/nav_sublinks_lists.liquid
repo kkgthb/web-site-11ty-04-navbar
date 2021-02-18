@@ -1,0 +1,10 @@
+                <ul class="tn_flyo">
+                  {%- for sublink in sublinks -%}
+                    {%- capture active_sublink -%}{%- if pageurl == sublink.url -%}active{%- endif -%}{%- endcapture -%}
+                    <li class="tn_bl2_viz {{ active_sublink }}">
+                      <a href="{{ sublink.url }}" class="tn_bl2_txt">
+                        {{ sublink.text }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>

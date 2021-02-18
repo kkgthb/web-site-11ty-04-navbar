@@ -1,0 +1,8 @@
+@mixin un_contain_masthead_contained() {
+  #masthead {
+    .contained {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

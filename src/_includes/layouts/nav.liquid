@@ -1,0 +1,27 @@
+<header id="masthead">
+  <div class="contained contained--lg">
+    <nav role="navigation" aria-label="Main Navigation" id="topnav" class="topnav grdGrid -middle -between">
+
+      <div class="topnav__header grdCell">
+        <div class="grdGrid -middle -between">
+          <a href="/" id="brandingLogo" class="grdCell">
+            Branding Logo
+          </a>
+          <button type="button" id="hamburger" class="tn_hhmbg_viz">
+            <span class="tn_hhmbg_txt grdCell">
+              Menu &#9776;
+            </span>
+          </button>
+        </div>{%- comment -%}End div.grdGrid{%- endcomment -%}
+      </div>{%- comment -%}End div.topnav__header{%- endcomment -%}
+
+      <div class="topnav__body grdCell -fill">
+        {% include 'components/nav/functions/nav_component_picker', links: site.mainNavLinks, pageurl: page.url %}
+      </div>{%- comment -%}End div.topnav__body{%- endcomment -%}        
+
+    </nav>
+  </div>{%- comment -%}End div.contained{%- endcomment -%}
+</header>
+
+
+
