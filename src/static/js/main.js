@@ -152,3 +152,8 @@ for (let btn of $$(".tn_drop .tn_bl1_viz")) {
 for (let el of $$(".tn_drop .tn_bl1_viz, .tn_drop .tn_bl2_viz")) {
   el.addEventListener("keydown", escCollapsedDropdown);
 }
+
+// Resize dropdown items if someone resizes a screen while a dropdown is exposed
+window.onresize = function () {
+  adjustDropdownItemsSize(document);
+};
