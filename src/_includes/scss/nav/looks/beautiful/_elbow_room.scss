@@ -1,0 +1,75 @@
+.topnav .tn_bl1_viz {
+  @include some_left_right_padding();
+}
+
+.topnav__header,
+.topnav .tn_bl1_viz,
+.topnav .tn_bl2_viz {
+  @include some_top_bottom_padding();
+}
+
+@mixin stacked_elbow() {
+  .topnav__body .grdGrid {
+    @include some_stacked_top_bottom_margin_compensation();
+  }
+
+  .topnav .tn_bl1_viz {
+    @include some_stacked_top_bottom_margin();
+  }
+
+  .topnav .tn_bl2_viz {
+    @include some_stacked_top_bottom_margin(); // Was already here
+  }
+
+  .topnav__body {
+    @include some_stacked_left_right_margin_compensation();
+  }
+  .topnav .tn_bl1_viz,
+  .topnav .tn_bl2_viz {
+    @include some_stacked_left_right_margin();
+  }
+}
+
+@mixin floaty_elbow() {
+  .topnav {
+    @include some_floaty_whole_nav_top_bottom_padding();
+  }
+
+  .topnav__body .grdGrid {
+    @include some_floaty_left_right_margin_compensation();
+    @include some_floaty_outer_top_bottom_margin_compensation();
+  }
+
+  .topnav .tn_bl1_viz {
+    @include some_floaty_left_right_margin();
+    @include some_floaty_outer_top_bottom_margin();
+  }
+
+  .tn_flyo {
+    @include some_floaty_left_right_margin();
+  }
+
+  .topnav .tn_bl2_viz {
+    @include some_left_right_padding(); // Was already here
+  }
+
+  .topnav .tn_bl2_viz + .topnav .tn_bl2_viz {
+    @include some_floaty_outer_top_bottom_margin();
+  }
+}
+
+html.no-js {
+  @include stacked_elbow();
+}
+
+html.js {
+  @include media-breakpoint-down(sm) {
+    @include stacked_elbow();
+  }
+}
+
+html.js {
+  @include media-breakpoint-up(sm) {
+    @include floaty_elbow();
+  }
+}

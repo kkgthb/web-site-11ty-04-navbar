@@ -1,0 +1,86 @@
+@mixin mixin_nav_txt_font() {
+  font-family: $sans-fontfamily;
+}
+
+@mixin visually_distinct_top_look() {
+  border-bottom: solid 1px #e9ebed;
+  @include mixin_nav_txt_font();
+}
+
+@mixin some_floaty_left_right_margin_compensation() {
+}
+
+@mixin some_floaty_left_right_margin() {
+}
+
+@mixin some_stacked_left_right_margin_compensation() {
+}
+
+@mixin some_stacked_left_right_margin() {
+}
+
+@mixin some_left_right_padding() {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@mixin some_floaty_whole_nav_top_bottom_padding() {
+}
+
+@mixin some_floaty_outer_top_bottom_margin_compensation() {
+}
+
+@mixin some_floaty_outer_top_bottom_margin() {
+}
+
+@mixin some_stacked_top_bottom_margin_compensation() {
+}
+
+@mixin some_stacked_top_bottom_margin() {
+}
+
+@mixin some_top_bottom_padding() {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@mixin style_viz_focused() {
+  // Note:  to play w/ borders w/o hover making things move, just style the underlying viz
+  // to typically have a transparent border of the same size.
+  // Then all that's changing is the border color.  https://stackoverflow.com/a/9612782
+  // Alternatively, use a solid box-shadow if going all the way around.
+  // That said, box-shadow looks pretty stupid on a full-bleed mobile menu -- it's just top & bottom.
+  //box-shadow: 0 0 0 5px pink;
+  //background: pink;
+}
+
+@mixin style_viz_focused_but_dead() {
+  //box-shadow: none;
+  //background: transparent;
+}
+
+@mixin style_txt_focused() {
+  border-bottom: solid 0.4em $color-accent-secondary;
+}
+
+@mixin style_txt_focused_but_dead() {
+  border-bottom: none;
+}
+
+@mixin a_floatey_box_shadow() {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+@mixin style_floaty_inneritems() {
+  background-color: $color-bg-gentle; // Even if it's the same color, you need one for floatey to not be see-thru.
+}
+
+@mixin style_floaty_base_colors() {
+}
+
+@mixin style_url_match() {
+  .tn_bl1_txt,
+  .tn_bl2_txt {
+    color: $color-accent-secondary;
+  }
+}

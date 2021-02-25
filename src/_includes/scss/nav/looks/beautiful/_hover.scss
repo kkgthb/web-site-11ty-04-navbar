@@ -1,0 +1,69 @@
+@mixin tn1_bl1_focus_look_on() {
+  @include style_viz_focused();
+  .tn_bl1_txt {
+    @include style_txt_focused();
+  }
+}
+
+@mixin tn1_bl1_focus_look_off() {
+  @include style_viz_focused_but_dead();
+  .tn_bl1_txt {
+    @include style_txt_focused_but_dead();
+  }
+}
+
+.tn_bl1_viz {
+  &:hover,
+  &:focus {
+    @include tn1_bl1_focus_look_on();
+  }
+  &:focus:not(:focus-visible) {
+    @include tn1_bl1_focus_look_off();
+  }
+  &:focus-visible {
+    @include tn1_bl1_focus_look_on();
+  }
+}
+
+.tn_bl2_viz {
+  &:hover {
+    @include style_viz_focused();
+    .tn_bl2_txt {
+      @include style_txt_focused();
+    }
+  }
+
+  &:focus {
+    @include style_viz_focused();
+    .tn_bl2_txt {
+      @include style_txt_focused();
+    }
+  }
+}
+
+#hamburger {
+  // Note:  Putting a "viz" style meant for padded boxes into #hamburger looks stupid if it's the same size as .tn_hhmbg_txt
+  &:hover,
+  &:focus {
+    .tn_hhmbg_txt {
+      @include style_txt_focused();
+    }
+  }
+  &:focus:not(:focus-visible) {
+    .tn_hhmbg_txt {
+      @include style_txt_focused_but_dead();
+    }
+  }
+  &:focus-visible {
+    .tn_hhmbg_txt {
+      @include style_txt_focused();
+    }
+  }
+}
+
+html.no-js .tn_drop .tn_bl1_viz {
+  &:hover,
+  &:focus {
+    @include tn1_bl1_focus_look_off();
+  }
+}

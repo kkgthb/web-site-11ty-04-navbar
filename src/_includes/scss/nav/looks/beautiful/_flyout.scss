@@ -1,0 +1,9 @@
+html.js {
+  @include media-breakpoint-up(sm) {
+    .tn_flyo {
+      @include style_floaty_inneritems();
+      @include a_floatey_box_shadow();
+      @include style_floaty_base_colors()
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.topnav {
+  @include un_button_looking_buttons();
+  @include un_link_looking_links();
+  @include un_list_looking_lists();
+
+  a.tn_bl1_viz,
+  a.tn_bl2_viz {
+    display: block;
+  }
+}
+
+/**
+ * From Tailwind:
+ * Work around a Firefox/IE bug where the transparent `button` background
+ * results in a loss of the default `button` focus styles.
+ */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}

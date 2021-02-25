@@ -1,0 +1,137 @@
+@mixin mixin_nav_txt_font() {
+  color: #e2e8f0; // text-gray-300
+  //font-family: $sans-fontfamily;
+  font-family: Inter var, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji"; // Tailwind fonts -- including one that actually has 500-weight
+  font-display: optional;
+  //font-size: 1rem; // text-base
+  //line-height: 1.5rem; // text-base
+  font-size: 0.875rem; // text-sm
+  line-height: 1.25rem; // text-sm
+  font-weight: 500; // font-medium
+  //font-weight: 600; // Segoe-UI doesn't have a 500 (=400); FF/Win loves Segoe UI if it's in the list.
+}
+
+@mixin visually_distinct_top_look() {
+  background-color: #2d3748; // bg-gray-800
+}
+
+@mixin some_floaty_left_right_margin_compensation() {
+  margin-left: -1rem; // space-x-4
+  margin-right: 0rem; // space-x-4
+  max-width: 100%; // space-x-4
+}
+
+@mixin some_floaty_left_right_margin() {
+  margin-left: 1rem; // space-x-4
+}
+
+@mixin some_stacked_left_right_margin_compensation() {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  max-width: 100%;
+}
+
+@mixin some_stacked_left_right_margin() {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+@mixin some_left_right_padding() {
+  padding-left: 0.75rem; // px-3
+  padding-right: 0.75rem; // px-3
+}
+
+@mixin some_floaty_whole_nav_top_bottom_padding() {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+@mixin some_floaty_outer_top_bottom_margin_compensation() {
+  margin-top: -1rem; // Helps w/ touchability?
+}
+
+@mixin some_floaty_outer_top_bottom_margin() {
+  margin-top: 1rem; // Helps w/ touchability?
+}
+
+@mixin some_stacked_top_bottom_margin_compensation() {
+  //margin-top: -0.25rem; // space-y-1
+  margin-top: -1rem; // space-y-1
+}
+
+@mixin some_stacked_top_bottom_margin() {
+  //margin-top: 0.25rem; // space-y-1
+  margin-top: 1rem; // space-y-1
+}
+
+@mixin some_top_bottom_padding() {
+  padding-top: 0.5rem; // py-2
+  padding-bottom: 0.5rem; // py-2
+}
+
+@mixin style_viz_focused() {
+  border-radius: 0.375rem; // rounded-md
+  background-color: #4a5568; // bg-color-700
+}
+
+@mixin style_viz_focused_but_dead() {
+  background-color: #2d3748; // bg-gray-800
+}
+
+@mixin style_txt_focused() {
+  color: #ffffff;
+}
+
+@mixin style_txt_focused_but_dead() {
+  color: #e2e8f0; // text-gray-300
+}
+
+@mixin a_floatey_box_shadow() {
+  @include weird_tailwind_shadow();
+}
+
+@mixin style_floaty_inneritems() {
+  border-radius: 0.375rem; // rounded-md
+  //background-color: #2d3748; // bg-gray-800
+  margin-top: 0.5rem; // mt-2
+  background-color: #ffffff; // bg-white
+}
+
+@mixin style_floaty_base_colors() {
+  .tn_bl2_txt {
+    color: #4a5568; // text-gray-700
+  }
+  .tn_bl2_viz {
+    &.active {
+      border-radius: 0;
+      //background-color: #f7fafc; // bg-gray-100
+      background-color: #edf2f7; // bg-gray-200
+    }
+
+    &:hover,
+    &:focus {
+      //background-color: #f7fafc; // bg-gray-100
+      //background-color: #edf2f7; // bg-gray-200
+      //background-color: #e2e8f0; // bg-gray-300
+      background-color: #cbd5e0; // bg-gray-400
+      border-radius: 0;
+      .tn_bl2_txt {
+        color: #1a202c; // text-gray-900
+      }
+    }
+  }
+}
+
+@mixin style_url_match() {
+  background-color: #1a202c; // bg-gray-900
+  border-radius: 0.375rem; // rounded-md
+  .tn_bl1_txt,
+  .tn_bl2_txt {
+    color: #ffffff;
+  }
+}
